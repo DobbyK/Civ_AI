@@ -1,0 +1,13 @@
+Welcome to the Civ AI for the Civilization Board Game By Thomas Wiley!
+What do you want to do today? (v0.01)
+
+1. New Game
+
+2. Load Game
+
+3. Tutorial 
+
+4. Civilipedia
+
+5. Exit
+

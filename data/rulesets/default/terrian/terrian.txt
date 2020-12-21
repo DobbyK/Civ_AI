@@ -1,0 +1,17 @@
+# This is the terrian rules for the default ruleset, this is how its setup:
+# Name = {Name}
+# A = {Attack}
+# D = {Defense}
+# HP = {Health}
+# MP = {Movement}
+# PR = {Production}
+# TC = {Tech}
+
+# Warrior 
+Name = Warrior
+A = 1
+D = 1
+HP = 10
+MP = 2
+PR = 10
+TC = 'N/A' 
