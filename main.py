@@ -1,48 +1,56 @@
 import time, os
-global ruleset
-ruleset = 'default'
-def startgame(file):
+startup = True
+gameon = True
+
+def newgame():
 	try:
-		os.system('python ' + file)
-		print('Loaded Game, Starting...')
+		print('Loading Default Settings...')
+		os.system('python default.py')
+		print('Done')
+		startup == None
+		return
 	except:
 		print('Error')
 		return
-def newgame():
-	if ruleset == 'default':
-		print('Would you like to load default settings?(y/n)')
-		c = input('>> ')
-		if c == 'y' or c == 'Y':
-			print('What do you want to call it?')
-			sf = input('>> ')
-			os.system('cp saves/default.py' + ' saves/' + sf + '.py')
-			startgame('saves/' + sf + '.py')
-		if c == 'n' or c == 'N':
-			print('What settings would you like to load?')
-			ld = input('>> ')
-			print('What would like to call the game?')
-			sf = input('>> ')
-			os.system('cp saves/' + ld + '.py ' + 'saves/' + sf + '.py')
-			startgame()
-		else:
-			print('Error')
-			newgame()
-	else:
-		print('Error')
-		newgame()
+
 def start():
 	try:
 		os.system('cat text/openning.txt')
-		c = input('>> ')
-		c = int(c)
+		ch = input('>> ')
+		global c
+		c = int(ch)
+		return
 	except:
-
-		print('That is not a number, or has letters')
+		print('Error')
 		start()
 
-	if c == 1:
-		newgame()
+while gameon == True:
+	if startup == True:
+		try:
+			start()
+			print(c)
+			startup = False
+		except:
+			print('Error')
+	if startup == False:
+		try:
+			if c == 1:
+				newgame()
+			else:
+				print('Error')
+		except:
+			print('Error')
+			return
+	if startup == None:
+		try:
+			os.system('cat text/actions.txt')
+
+while gameon == False:
+	print('Are you sure that you want to exit?')
+	ch = input('>> ')
+	if ch == 'y':
+		gameon == True
+	elif ch == 'n':
+		quit()
 	else:
 		print('Error')
-
-start()
