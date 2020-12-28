@@ -1,0 +1,15 @@
+# This is the terrian rules for the default ruleset, this is how its setup:
+# class: unit type
+# 	{unitname} = [{Acorym}, {A}, {D}, {HP}, {MP}, {TECH}, {PRODUCTION}]
+def battle():
+	x = randint(1, 10)
+	print(x)
+
+class melee:
+	warrior = ['WR', 1, 1, 10, 2, 'NONE', 10]
+	settler = ['ST', 0, 1, 20, 2, 'NONE', 40]
+	worker = ['WK', 0, 1, 10, 2, 'POTTERY', 25]
+
+class ranged:
+	slinger = ['SL', 1, 1, 10, 2, 'NONE', 20]
+	archer = ['AR', 3, 2, 10, 2, 'ARCHERY', 3battle()
