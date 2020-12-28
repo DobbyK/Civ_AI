@@ -1,11 +1,16 @@
 import time, os
 startup = True
 gameon = True
+def game():
+	try:
+		os.system('cat text/actions.txt')
+		c = input('>> ')
+		c = int(c)
 
 def newgame():
 	try:
 		print('Loading Default Settings...')
-		os.system('python default.py')
+		os.system('python saves/default.py')
 		print('Done')
 		startup == None
 		return
@@ -32,7 +37,7 @@ while gameon == True:
 			startup = False
 		except:
 			print('Error')
-	if startup == False:
+	elif startup == False:
 		try:
 			if c == 1:
 				newgame()
@@ -40,10 +45,13 @@ while gameon == True:
 				print('Error')
 		except:
 			print('Error')
-			return
-	if startup == None:
+	elif startup == None:
 		try:
-			os.system('cat text/actions.txt')
+			game()
+		except:
+			print('Error')
+	else:
+		break
 
 while gameon == False:
 	print('Are you sure that you want to exit?')

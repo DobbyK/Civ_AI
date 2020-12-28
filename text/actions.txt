@@ -1,0 +1,9 @@
+What would you like to do?
+
+1. Move a unit
+
+2. Give a unit a command
+
+3. Diplomacy
+
+4. End Turn
